@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'coba' => 'coba#index'
 
+  get 'coba-ng' => 'coba#coba_ng'
+
   get 'komentar' => 'coba#komentar'
 
   get 'home/index'

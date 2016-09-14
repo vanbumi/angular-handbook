@@ -5,4 +5,8 @@ class CobaController < ApplicationController
   def komentar
   end
 
+  def coba_ng
+
+  end
+
 end
