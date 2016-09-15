@@ -1,0 +1,36 @@
+
+<div ng-app="" ng-init="myColor='lightblue'; quantity=1; cost=5; firstName='Widyo'; lastName='Bumi';">
+
+  <h2>AngularJS Expressions</h2>
+  <p>My first expression {{ 5 + 5 }}</p>
+
+  <p>Change the value of the input field:</p>
+  <input style="background-color:{{ myColor }}" ng-model="myColor" value="{{ myColor }}" >
+  <h2>{{ myColor }}</h2>
+
+  <h2>AngularJS Number</h2>
+
+  <pre>
+  &lt;div ng-app="" ng-init="myColor='lightblue'; quantity=1; cost=5"&gt;
+  </pre>
+
+  <p>
+    My Number in Quantity {{ quantity }}, and in Cost is {{ cost }} <br>
+    The Total is {{ quantity * cost }}
+  </p>
+
+  <strong>Same example using ng-bind:</strong>
+  <pre>
+  The total is $&lt;span ng-bind="quantity * cost"></span&gt;
+  </pre>
+  <p>
+    The total is $<span ng-bind="quantity * cost"></span>
+  </p>
+
+  <h2>AngularJS Strings</h2>
+  <p>My name is {{ firstName + " " + lastName }}</p>
+  <p>Also my name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+
+</div>
+
+<a href="/coba-ng/objects">Angular Object</a>

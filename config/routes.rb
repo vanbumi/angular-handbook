@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   get 'coba-ng' => 'coba#coba_ng'
 
+  get 'coba-ng/expression' => 'coba#ng_expressionis'
+
+  get 'coba-ng/objects' => 'coba#ng_objects'
+
+  get 'coba-ng/modules' => 'coba#ng_modules'
+
   get 'komentar' => 'coba#komentar'
 
   get 'home/index'

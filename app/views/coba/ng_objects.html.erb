@@ -1,0 +1,37 @@
+
+<div ng-app="" ng-init="person={ firstName:'Widyo', lastName:'Bumi', age:'35' }; mother='Sri Sunarti'; car={ brand:'Toyota', color:'Blue', year:2015 }; points=[1,15,19,2,40] ">
+  <h2>AngularJS Objects</h2>
+
+  <p>
+    Name Depan: {{ person.firstName }} <br>
+    Nama Belakang: {{ person.lastName }} <br>
+    Umur: {{ person.age }}
+  </p>
+  <p>
+    Nama Ibu: {{ mother }}
+  </p>
+    Kendaraan Merek: {{ car.brand }} <br>
+    Warna Kendaraan: {{ car.color }} <br>
+    Tahun Kendaraan: {{ car.year }}
+
+  <h3>ng-bind</h3>
+  <p>
+    Detail: <span ng-bind="person.firstName +' '+ person.lastName + ' ' + 'Umur' + ' ' + person.age +' '+ car.brand +' '+ car.color +' '+ car.year "></span>
+  </p>
+
+  <h2>AngularJS Arrays</h2>
+
+  <p>
+    My Points Result is {{ points[0] }}<br>
+    Brandon Points Result: {{ points[2] }}<br>
+    Ersya Points Result: {{ points[4] }}
+  </p>
+
+  <h3>ng-bind</h3>
+
+  <p>
+    All Our Points Result : <span ng-bind="points[0] +','+ points[2] +','+ points[4] "></span> 
+  </p>
+
+
+</div>

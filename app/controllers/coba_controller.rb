@@ -6,7 +6,15 @@ class CobaController < ApplicationController
   end
 
   def coba_ng
+  end
 
+  def ng_expressionis
+  end
+
+  def ng_objects
+  end
+
+  def ng_modules
   end
 
 end
