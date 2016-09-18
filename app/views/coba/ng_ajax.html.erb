@@ -1,0 +1,84 @@
+<h1>AngularJS <label>AJAX - $http</label></h1>
+
+<b>$http</b> is an AngularJS service for reading data from remote servers.
+<br>
+The AngularJS <b>$http</b> service makes a request to the server, and returns a response.
+
+<div>
+
+  <!-- <div ng-app="myApp" ng-controller="myCtrl">
+      <p>
+        Try to reading from another page: <h2>{{ myRead }}</h2>
+      </p>
+  </div>
+
+  <script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope, $http) {
+      $http.get("http://localhost:3000/test.txt").then(function(response) {
+        $scope.myRead = response.data;
+      });
+    });
+  </script>
+
+  <div ng-app="cobaApp" ng-controller="cobaCtrl">
+    Tampilkan service http: {{ tampilKan }}
+  </div>
+
+  <script charset="utf-8">
+    var app = angular.module("cobaApp", []);
+    app.controller("cobaCtrl", function($scope, $http) {
+      $http.get("http://localhost:3000/hallo.html").then(function(response) {
+        $scope.tampilKan = response.data;
+      });
+    });
+  </script> -->
+
+  <!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+  <p>Today's welcome message is:</p>
+
+  <h1>{{myWelcome}}</h1>
+
+  </div>
+
+  <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope, $http) {
+    $http({
+      method : "GET",
+      url : "/test.txt"
+    }).then(function mySucces(response) {
+        $scope.myWelcome = response.data;
+      }, function myError(response) {
+        $scope.myWelcome = response.statusText;
+    });
+  });
+  </script> -->
+
+<h3><label >Latihan http ajax</label></h3>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  Menampilkan response Ajax : <h3>{{ tampil }}</h3>
+</div>
+
+<script charset="utf-8">
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope, $http) {
+    $http({
+      method: 'GET',
+      url: '/hallo.html'
+    }).then(function success(response) {
+        $scope.tampil = response.data;
+    }, function error(response) {
+      $scope.tampil = response.statusText;
+    });
+  });
+</script>
+</div>
+
+<p>
+  <a href="/coba-ng/ajax2">Ajax2</a>
+</p>

@@ -1,0 +1,49 @@
+<h1>Angular Scope</h1>
+
+<ul>
+  <li>The scope is the binding part between the HTML (view) and the JavaScript (controller).</li>
+  <li>The scope is an object with the available properties and methods.</li>
+  <li>The scope is available for both the view and the controller.</li>
+</ul>
+
+<h2>How to Use the Scope?</h2>
+When you make a <b>controller</b> in AngularJS, you <b>pass</b> the <b>$scope object</b> as an <b>argument</b>:
+
+<h2>Understanding the Scope</h2>
+If we consider an AngularJS application to consist of:
+<ul>
+  <li><b>View</b>, which is the HTML.</li>
+  <li><b>Model</b>, which is the data available for the current view.</li>
+  <li><b>Controller</b>, which is the JavaScript function that makes/changes/removes/controls the data.</li>
+</ul>
+
+Then the <b>scope</b> is the Model.
+
+The <b>scope</b> is a JavaScript object with properties and methods, which are available for both the view and the controller.<br><br>
+
+<strong>Example Repetition</strong>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x.nama +', '+ x.status }}
+    </li>
+  </ul>
+</div>
+
+<script charset="utf-8">
+  var app = angular.module("myApp", []);
+
+  app.controller("myCtrl", function($scope) {
+    $scope.names = [
+      {nama:'Ersya', status:'Mahasiswa'},
+      {nama:'Brandon', status:'Pelajar'},
+      {nama:'Dyo', status:'Pengusaha Sukses'}];
+  });
+</script>
+
+<br><br>
+
+<a href="/coba-ng/filter">Angular Filter</a>
+
+<br><br>

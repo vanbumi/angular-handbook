@@ -1,1 +1,54 @@
 <h1>AngularJS Modules</h1>
+
+<ul>
+  <li>An <b>AngularJS module</b> defines an application.</li>
+
+  <li>The module is a <strong>container</strong> for the different parts of an application.</li>
+
+  <li>The module is a container for the <strong>application controllers</strong>.</li>
+
+  <li><b>Controllers</b> always belong to a <b>module</b>.</li>
+</ul>
+
+<h2>Creating a Module</h2>
+
+A module is created by using the AngularJS function <b>angular.module</b>
+
+<pre style="background-color:#f3f3f3;">
+  &lt;div ng-app="myApp"&gt;...&lt;/div&gt;
+
+  &lt;script&gt;
+
+  var app = angular.module("myApp", []);
+
+  &lt;/script&gt;
+</pre>
+
+<h2>Adding a Controller</h2>
+
+<div ng-app="myApp" ng-controller="myCtrl" test-directive>
+  Sebut nama mu : {{ firstName +' '+ lastName  }}
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope) {
+    $scope.firstName = "Widyo";
+    $scope.lastName = "Bumi";
+  });
+</script>
+
+<h2>Adding a Directive</h2>
+
+<div ng-app="myAppDua" w3-test-directive></div>
+
+<script>
+  var appku = angular.module("myAppDua", []);
+  app.directive("w3TestDirective", function() {
+    return {
+      template: "Ya ya ya"
+    };
+  });
+</script>
+
+<a href="/coba-ng/directives">Angular Directives</a>

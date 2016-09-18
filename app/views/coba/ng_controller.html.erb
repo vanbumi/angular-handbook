@@ -1,0 +1,50 @@
+<h1>AngularJS Controllers</h1>
+
+<h2>Controller Methods</h2>
+
+The example above demonstrated a controller object with two properties: lastName and firstName.
+A controller can also have methods (<b>variables as functions</b>):<br>
+Nama Lengkap: {{ <strong>namaLengkap()</strong> }}
+
+<br><br>
+<div ng-app="myApp" ng-controller="myCtrl">
+  Nama Depan: <input type="text" ng-model="namaDepan">
+  Nama Belakang: <input type="text" ng-model="namaBelakang"><br>
+  Nama Lengkap: {{ namaLengkap() }}
+
+</div>
+
+<script>
+  var app = angular.module("myApp", []).controller("myCtrl", function($scope) {
+    $scope.namaDepan = "Ersya";
+    $scope.namaBelakang = "Prahesti";
+    $scope.namaLengkap = function() {
+      return $scope.namaDepan + " " + $scope.namaBelakang;
+    }
+  });
+</script>
+
+<!-- <div ng-app="myApp" ng-controller="personCtrl">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{fullName()}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.fullName = function() {
+        return $scope.firstName + " " + $scope.lastName;
+    };
+});
+</script> -->
+
+<br><br>
+<a href="/coba-ng/scope">AngularJS Scope</a>
+
+<br><br>

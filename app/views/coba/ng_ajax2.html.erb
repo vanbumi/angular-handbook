@@ -1,0 +1,20 @@
+<h1>Latihan Ulang http - ajax</h1>
+
+<div ng-app="appKu" ng-controller="ctrlKu">
+  <h2>Tampilkan disini <label>{{ tampilKan }}</label></h2>
+</div>
+
+<script>
+  var app = angular.module("appKu", []);
+  app.controller("ctrlKu", function($scope, $http) {
+      $http({
+        method: "GET",
+        url: "/hallo.html"
+      }).then(function success(response) {
+        $scope.tampilKan = response.data;
+      }, function error(response) {
+        $scope.tampilKan = response.statusText;
+      }
+    )
+  });
+</script>

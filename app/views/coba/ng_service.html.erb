@@ -1,0 +1,75 @@
+<h1>AngularJS Services</h1>
+
+<b>What is a Service?</b>
+
+In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
+
+AngularJS has about 30 built-in services. One of them is the $location service.
+
+The $location service has methods which return information about the location of the current web page:
+
+<h2>Use the <b>$location</b> service in a controller:</h2>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<pre>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope, $location) {
+      $scope.myUrl = $location.absUrl();
+  });
+</pre>
+
+<p>The url of this page is:</p>
+<h3>{{myUrl}}</h3>
+
+
+<p>This example uses the built-in $location service to get the absolute url of the page.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $location) {
+    $scope.myUrl = $location.absUrl();
+});
+</script>
+
+<h2>The <b>$http</b> Service</h2>
+
+The $http service is one of the most common used services in AngularJS applications. The service <b>makes a request to the server</b>, and lets your application <b>handle the response</b>.
+
+<!-- <div ng-app="myAppa" ng-controller="myCtrla"> -->
+
+<p>Today's welcome message is:</p>
+
+<h1 ng-controller="myCtrla">{{myWelcome}}</h1>
+
+<!-- </div> -->
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+// var appa = angular.module('myAppa', []);
+app.controller('myCtrla', function($scope, $http) {
+  $http.get("http://localhost:3000/test.txt").then(function (response) {
+      $scope.myWelcome = response.data;
+  });
+});
+</script>
+
+<h2>Latihan</ha>
+
+<p ng-controller="myCtrlb">{{ lampiran }}</p>
+
+<script>
+  app.controller("myCtrlb", function($scope, $http) {
+    $http.get("http://localhost:3000/hallo.html").then(function(response) {
+        $scope.lampiran = response.data;
+    });
+  });
+</script>
+</div>
+<br><br>
+
+<a href="/coba-ng/ajax"><button class="btn btn-default">Continue read AngularJS AJAX - $http</button></a>
+
+
+<br><br>

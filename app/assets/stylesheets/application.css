@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ b {
+   color: red;
+   /*font-weight: bold;*/
+ }
+ pre {
+   width: 50%;
+ }
+ label{
+   background-color: #3fc4ff;
+   padding: 5px;
+   border-radius: 10px;
+ }

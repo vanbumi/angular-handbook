@@ -17,4 +17,48 @@ class CobaController < ApplicationController
   def ng_modules
   end
 
+  def ng_directiv
+  end
+
+  def ng_model
+  end
+
+  def ng_validasi
+  end
+
+  def ng_status
+  end
+
+  def ng_binding
+  end
+
+  def ng_controller
+  end
+
+  def ng_scope
+  end
+
+  def ng_filter
+  end
+
+  def ng_filter2
+  end
+
+  def ng_filter3
+  end
+
+  def ng_service
+  end
+
+  def ng_ajax
+  end
+
+  def ng_ajax2
+  end
+
+  def ng_json
+  end
+
+
+
 end

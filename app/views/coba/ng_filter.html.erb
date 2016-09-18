@@ -1,0 +1,96 @@
+<h1>AngularJS Filters</h1>
+
+Filters can be added in AngularJS to format data.
+
+<h3>AngularJS provides filters to transform data:</h3>
+<style media="screen">
+
+</style>
+<ul>
+  <li><b>currency</b> Format a number to a currency format.</li>
+  <li><b>date</b> Format a date to a specified format.</li>
+  <li><b>filter</b> Select a subset of items from an array.</li>
+  <li><b>json</b> Format an object to a JSON string.</li>
+  <li><b>limitTo</b> Limits an array/string, into a specified number of elements/characters.</li>
+  <li><b>lowercase</b> Format a string to lower case.</li>
+  <li><b>number</b> Format a number to a string.</li>
+  <li><b>orderBy</b> Orders an array by an expression.</li>
+  <li><b>uppercase</b> Format a string to upper case.</li>
+</ul>
+
+<h2>Adding Filters to Expressions</h2>
+Filters can be added to expressions by using the pipe character |, followed by a filter.
+
+The uppercase filter format strings to upper case:<br><br>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  <!-- Nama Depan : {{ namaDepan | lowercase }} -->
+  Daftar Peserta:
+  <ul>
+      <li ng-repeat="x in names | orderBy:'country' ">
+        {{ x.name +', '+ x.country }}
+      </li>
+  </ul>
+
+  <h1 ng-controller="costCtrl">Price: {{ price | currency : 'Rp.' : 0 }}</h1>
+  <!-- {{ n3() | currency:"Rp.":0 }} -->
+
+  <script charset="utf-8">
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+      // $scope.namaDepan = "Widyo";
+      $scope.names = [
+          {name:'Jani',country:'Norway'},
+          {name:'Carl',country:'Sweden'},
+          {name:'Margareth',country:'England'},
+          {name:'Hege',country:'Norway'},
+          {name:'Joe',country:'Denmark'},
+          {name:'Gustav',country:'Sweden'},
+          {name:'Birgit',country:'Denmark'},
+          {name:'Mary',country:'England'},
+          {name:'Kai',country:'Norway'}
+          ];
+    });
+
+    app.controller("costCtrl", function($scope) {
+        $scope.price = 5000000;
+    });
+  </script>
+
+  <h2>The filter Filter</h2>
+
+  The filter filter selects a subset of an array.
+  <br>
+  The filter filter can only be used on arrays, and it returns an array containing only the matching items.<br>
+  <br>
+<pre>
+&lt;li ng-repeat="x in names | filter: 'i'"&gt;
+</pre>
+  <br>
+  Example <br>
+
+  <ul ng-controller="namesCtrl">
+    <li ng-repeat="x in names | filter: 'i'">
+      {{ x }}
+    </li>
+  </ul>
+
+  <script charset="utf-8">
+    app.controller("namesCtrl", function($scope) {
+      $scope.names = [
+        'Ersya',
+        'Brandon',
+        'Sri',
+        'Dyo',
+        'Shinta',
+        'Shanti'
+      ];
+    });
+  </script>
+</div>
+
+<br> <br>
+
+<a href="/coba-ng/filter2">Next Filter</a>
+
+<br><br>

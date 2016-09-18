@@ -1,0 +1,70 @@
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+  <h2>Customers List</h2>
+  <!-- <ul>
+    <li ng-repeat="x in myData">
+      {{ x.Name + ', ' + x.Country }}
+    </li>
+  </ul>
+
+  </div>
+
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('customersCtrl', function($scope, $http) {
+    $http.get("/customers.json").then(function (response) {
+        $scope.myData = response.data.records;
+    });
+  });
+  </script> -->
+
+  <table class="table table-hover table-striped">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Coutry
+      </th>
+    </tr>
+    <tr ng-repeat="x in names">
+      <td>
+        {{ x.Name }}
+      </td>
+      <td>
+        {{ x.Country }}
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    var app = angular.module("myApp", []);
+    app.controller("customersCtrl", function($scope, $http) {
+      $http.get("/customers.json").then(function(response) {
+        $scope.names = response.data.records;
+      });
+    });
+  </script>
+
+</div>
+
+<!-- <div ng-app="myApp" ng-controller="customersCtrl">
+
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("/customers.json")
+    .then(function (response) {
+      $scope.names = response.data.records;
+    });
+});
+</script> -->

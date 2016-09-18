@@ -1,0 +1,15 @@
+<div ng-app="myApp" ng-controller="myCtrl">
+    Your Name: <input type="text" ng-model="name">
+    <h1><small>Your Name is</small> {{ name }}</h1>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.name = "Widyo";
+    });
+</script>
+
+<br><br>
+<a href="/coba-ng/validation">Try Validate Input</a>
+

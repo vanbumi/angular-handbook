@@ -1,0 +1,64 @@
+<h1>AngularJS Data Binding</h1>
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+    Nama: <input type="text" ng-model="name">
+    <h1 ng-bind="name"></h1>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.name = 'Brandon';
+    });
+</script>-->
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+    <h1 ng-click="changeName()">{{ firstName }}</h1>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.firstName = "Linda";
+        $scope.changeName = function() {
+            $scope.firstName = "Santos";
+        }
+    });
+</script>-->
+
+<h1>AngularJS Controllers</h1>
+
+<!--<h2>A controller can also have methods (variables as functions):</h2>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+    FirstName: <input type="text" ng-model="firstName">
+    LastName: <input type="text" ng-model="lastName">
+    <br>
+    Full Name: {{ fullName() }}
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("personCtrl", function($scope) {
+            $scope.firstName = "Brandon";
+            $scope.lastName = "Bumi";
+            $scope.fullName = function() {
+                return $scope.firstName +" "+ $scope.lastName;
+            }
+        });
+    </script>
+
+</div>-->
+
+<script src="/scripts/namesController.js"></script>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.name +' '+ x.country }}
+        </li>
+    </ul>
+</div>
+
+<a href="/coba-ng/controller">Angular Controller</a>
+
+<br><br>
