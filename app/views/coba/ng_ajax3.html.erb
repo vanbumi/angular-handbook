@@ -1,0 +1,30 @@
+<h2>AngularJS - Ajax Sample Application</h2>
+
+<div ng-app="myApp" ng-controller="studentCtrl">
+  <table class="table table-hover table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Roll No</th>
+      <th>Percentage</th>
+    </tr>
+    <tr ng-repeat="student in students">
+      <td>{{ student.Name }}</td>
+      <td>{{ student.RollNo }}</td>
+      <td>{{ student.Percentage }}</td>
+    </tr>
+  </table>
+</div>
+
+<script charset="utf-8">
+  var app = angular.module("myApp", []);
+  app.controller("studentCtrl", function($scope,$http) {
+    $http({
+      methods: "GET",
+      url: "/students.json"
+    }).then(function success(response) {
+      $scope.students = response.data;
+    }, function error(respose) {
+      $scope.students = response.statusText;
+    });
+  });
+</script>

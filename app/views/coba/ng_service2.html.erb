@@ -1,0 +1,68 @@
+<h2>The $timeout Service</h2>
+
+The $timeout service is AngularJS' version of the <b>window.setTimeout</b> function.
+
+this the code:
+<pre>
+  &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+      &lt;h1>{{ myHeader }}</h1&gt;
+  &lt;/div>
+
+  &lt;script&gt;
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope, $timeout) {
+        $scope.myHeader = "Apakabar?";
+        $timeout(function() {
+          $scope.myHeader = "Apakah kamu baik-baik saja";
+        },2000);
+    });
+  &lt;/script&gt;
+</pre>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h3>My Header is: {{ myHeader }}</h1>
+
+    <h2>The <b>$interval</b> Service</h2>
+    <p>The <b>$interval</b> service runs a function every specified millisecond.</p>
+
+    <h3 ng-controller="timeCtrl">The time is : {{ theTime }}</h3>
+
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope, $timeout) {
+      $scope.myHeader = "Apakabar?";
+      $timeout(function() {
+        $scope.myHeader = "Apakah kamu baik-baik saja";
+      },2000);
+  });
+
+  app.controller("timeCtrl", function($scope, $interval) {
+      $scope.theTime = new Date().toLocaleTimeString();
+      $interval(function() {
+        $scope.theTime = new Date().toLocaleTimeString();
+      }, 1000);
+  });
+</script>
+
+this the code:
+<pre>
+  &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+      &lt;h1&gt;{{ theTime }}&lt;/h1&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope, $interval) {
+        $scope.theTime = new Date().toLocaleTimeString();
+        $theTime(function() {
+          $scope.theTime = new Date().toLocaleTimeString();
+        },1000);
+    });
+  &lt;/script&gt;
+</pre>
+
+<p>
+  Next <a href="/coba-ng/ajax">Angular Ajax - $http</a>
+</p>

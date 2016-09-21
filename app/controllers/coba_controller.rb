@@ -1,4 +1,7 @@
 class CobaController < ApplicationController
+
+  layout 'tutorial_layout'
+
   def index
   end
 
@@ -50,6 +53,9 @@ class CobaController < ApplicationController
   def ng_service
   end
 
+  def ng_service2
+  end
+
   def ng_ajax
   end
 
@@ -57,6 +63,12 @@ class CobaController < ApplicationController
   end
 
   def ng_json
+  end
+
+  def example1
+  end
+
+  def example2
   end
 
 

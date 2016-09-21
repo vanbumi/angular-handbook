@@ -1,0 +1,30 @@
+<h1>Example2</h1>
+
+<div ng-app="myApp" ng-controller="nameCtrl">
+
+  <p>
+      First Name: <input type="text" ng-model="firstName">
+  </p>
+  <p>
+      Last Name: <input type="text" ng-model="lastName">
+  </p>
+  <p>
+    Full Name: {{ fullName() }}
+  </p>
+
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("nameCtrl", function($scope) {
+    $scope.firstName = "Nama Depan";
+    $scope.lastName = "Nama Belakang";
+    $scope.fullName = function() {
+      return $scope.firstName +' '+ $scope.lastName;
+    }
+  });
+</script>
+
+<p>
+  <a href="/coba-ng/example3">example 3</a>
+</p>

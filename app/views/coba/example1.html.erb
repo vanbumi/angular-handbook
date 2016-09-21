@@ -1,0 +1,22 @@
+<h1>Example 1</h1>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  <h1>Hello, Welcome to <b>{{ helloTo }}</b></h1>
+
+  <pre>
+    &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+      &lt;h1>Hello, Welcome to &lt;b&gt;{{ helloTo }}&lt;/b&gt;</h1&gt;
+    &lt;/div>
+
+    &lt;script&gt;
+      angular.module("myApp", [])
+
+      .controller("myCtrl", function($scope) {
+        $scope.helloTo = "Angular Tutorial";
+      });
+    &lt;/script&gt;
+  </pre>
+
+<p>
+  <a href="/coba-ng/example2">Example 2</a>
+</p>

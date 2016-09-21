@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   get 'coba' => 'coba#index'
   get 'coba-ng' => 'coba#coba_ng'
+  get 'coba-ng/example1' => 'coba#example1'
+  get 'coba-ng/example2' => 'coba#example2'
+  get 'coba-ng/example3' => 'coba#example3'
   get 'coba-ng/expression' => 'coba#ng_expressionis'
   get 'coba-ng/objects' => 'coba#ng_objects'
   get 'coba-ng/modules' => 'coba#ng_modules'
@@ -16,8 +19,10 @@ Rails.application.routes.draw do
   get 'coba-ng/filter2' => 'coba#ng_filter2'
   get 'coba-ng/filter3' => 'coba#ng_filter3'
   get 'coba-ng/service' => 'coba#ng_service'
+  get 'coba-ng/service2' => 'coba#ng_service2'
   get 'coba-ng/ajax' => 'coba#ng_ajax'
   get 'coba-ng/ajax2' => 'coba#ng_ajax2'
+  get 'coba-ng/ajax3' => 'coba#ng_ajax3'
   get 'coba-ng/json' => 'coba#ng_json'
 
 
