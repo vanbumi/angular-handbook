@@ -64,6 +64,33 @@ The AngularJS <b>$http</b> service makes a request to the server, and returns a 
   Menampilkan response Ajax : <h3>{{ tampil }}</h3>
 </div>
 
+<style media="screen">
+  #prex {
+    background-color: #888 !important;
+    color:#fff;
+  }
+</style>
+
+<pre id="prex" style="">
+  &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+    Menampilkan response Ajax : &lt;h3&gt;{{ tampil }}&gt;/h3&lt;
+  &lt;/div&gt;
+</pre>
+
+<pre>
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope, $http) {
+    $http({
+      method: 'GET',
+      url: '/hallo.html'
+    }).then(function success(response) {
+        $scope.tampil = response.data;
+    }, function error(response) {
+      $scope.tampil = response.statusText;
+    });
+  });
+</pre>
+
 <script charset="utf-8">
   var app = angular.module("myApp", []);
   app.controller("myCtrl", function($scope, $http) {
@@ -79,10 +106,22 @@ The AngularJS <b>$http</b> service makes a request to the server, and returns a 
 </script>
 </div>
 
+<h2>Ajax Properties</h2>
+<ul>
+  <li><b>.config</b> the object used to generate the request.</li>
+  <li><b>.data</b> a string, or an object, carrying the response from the server.</li>
+  <li><b>.headers</b> a function to use to get header information.</li>
+  <li><b>.status</b> a number defining the HTTP status.</li>
+  <li><b>.statusText</b> a string defining the HTTP status.</li>
+</ul>
+<p>
+  <a href="/coba-ng/example4">Example</a>
+</p>
+
 <p>
   <a href="/coba-ng/ajax2">Ajax2</a>
 </p>
 
 <p>
-   <a href="#">Example App</a>
+   <a href="/coba-ng/ajax3">Example App</a>
 </p>

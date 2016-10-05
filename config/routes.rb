@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'coba-ng/example1' => 'coba#example1'
   get 'coba-ng/example2' => 'coba#example2'
   get 'coba-ng/example3' => 'coba#example3'
+  get 'coba-ng/example4' => 'coba#example4'
+
   get 'coba-ng/expression' => 'coba#ng_expressionis'
   get 'coba-ng/objects' => 'coba#ng_objects'
   get 'coba-ng/modules' => 'coba#ng_modules'
@@ -24,6 +26,12 @@ Rails.application.routes.draw do
   get 'coba-ng/ajax2' => 'coba#ng_ajax2'
   get 'coba-ng/ajax3' => 'coba#ng_ajax3'
   get 'coba-ng/json' => 'coba#ng_json'
+  get 'coba-ng/table' => 'coba#ng_table'
+  get 'coba-ng/table2' => 'coba#ng_table2'
+  get 'coba-ng/select' => 'coba#ng_select'
+  get 'coba-ng/htmldom' => 'coba#ng_htmldom'
+  get 'coba-ng/event' => 'coba#ng_event'
+  get 'coba-ng/form' => 'coba#ng_form'
 
 
   get 'komentar' => 'coba#komentar'

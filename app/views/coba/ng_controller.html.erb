@@ -4,15 +4,81 @@
 
 The example above demonstrated a controller object with two properties: lastName and firstName.
 A controller can also have methods (<b>variables as functions</b>):<br>
-Nama Lengkap: {{ <strong>namaLengkap()</strong> }}
+Nama Lengkap: <b>{{ <strong>namaLengkap()</strong> }}</b>
+<br>
+<div ng-app="myApp">
+  <h3>Example 1</h3>
+  <div ng-controller="myCtrl">
+    Nama Depan: <input type="text" ng-model="namaDepan">
+    Nama Belakang: <input type="text" ng-model="namaBelakang"><br>
+    Nama Lengkap: {{ namaLengkap() }}
+  </div>
+  <h4>Code:</h4>
+  <pre>
+    Nama Depan: &lt;input type="text" ng-model="namaDepan"&gt;
+    Nama Belakang: &lt;input type="text" ng-model="namaBelakang"&gt;<br>
+    Nama Lengkap: {{ namaLengkap() }}
+  </pre>
+  <h4>script:</h4>
+  <pre>
+    var app = angular.module("myApp", []).controller("myCtrl", function($scope) {
+      $scope.namaDepan = "Ersya";
+      $scope.namaBelakang = "Prahesti";
+      $scope.namaLengkap = function() {
+        return $scope.namaDepan + " " + $scope.namaBelakang;
+      }
+    });
+  </pre>
 
-<br><br>
-<div ng-app="myApp" ng-controller="myCtrl">
-  Nama Depan: <input type="text" ng-model="namaDepan">
-  Nama Belakang: <input type="text" ng-model="namaBelakang"><br>
-  Nama Lengkap: {{ namaLengkap() }}
+  <h3>Example 2</h3>
+  <div ng-controller="langCtrl">
+    Select your favorite language: <br>
+    <button ng-click="php()">PHP</button>
+    <button ng-click="ruby()">Ruby</button>
+    <button ng-click="cpp()">C++</button>
+    <button ng-click="java()">Java</button>
+    <button ng-click="javas()">JavaScript</button>
+    <h3>You have selected : <strong>{{ favLanguage }}</strong></h3>
+  </div>
+
+  <pre>
+  Select your favorite language:
+  &lt;button ng-click="php()"&gt;PHP&lt;/button&gt;
+  &lt;button ng-click="ruby()"&gt;Ruby&lt;/button&gt;
+  &lt;button ng-click="cpp()"&gt;C++&lt;/button&gt;
+  &lt;button ng-click="java()"&gt;Java&lt;/button&gt;
+  &lt;button ng-click="javas()"&gt;JavaScript&lt;/button&gt;
+  You have selected : {{ favLanguage }}
+  </pre>
+  <pre>
+  app.controller("langCtrl", function($scope){
+    $scope.favLanguage = "Nothing";
+
+    $scope.php = function(){
+      $scope.favLanguage = "PHP";
+    };
+    $scope.ruby = function(){
+      $scope.favLanguage = "Ruby";
+    };
+    $scope.cpp = function(){
+      $scope.favLanguage = "C++"
+    };
+    $scope.java = function(){
+      $scope.favLanguage = "Java"
+    };
+    $scope.javas = function(){
+      $scope.favLanguage = "JavaScript"
+    };
+  });
+  </pre>
+
 
 </div>
+
+<br><br>
+<a href="/coba-ng/scope">AngularJS Scope</a>
+
+<br><br>
 
 <script>
   var app = angular.module("myApp", []).controller("myCtrl", function($scope) {
@@ -22,29 +88,23 @@ Nama Lengkap: {{ <strong>namaLengkap()</strong> }}
       return $scope.namaDepan + " " + $scope.namaBelakang;
     }
   });
-</script>
+  app.controller("langCtrl", function($scope){
+    $scope.favLanguage = "Nothing";
 
-<!-- <div ng-app="myApp" ng-controller="personCtrl">
-
-First Name: <input type="text" ng-model="firstName"><br>
-Last Name: <input type="text" ng-model="lastName"><br>
-<br>
-Full Name: {{fullName()}}
-
-</div>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('personCtrl', function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-    $scope.fullName = function() {
-        return $scope.firstName + " " + $scope.lastName;
+    $scope.php = function(){
+      $scope.favLanguage = "PHP";
     };
-});
-</script> -->
-
-<br><br>
-<a href="/coba-ng/scope">AngularJS Scope</a>
-
-<br><br>
+    $scope.ruby = function(){
+      $scope.favLanguage = "Ruby";
+    };
+    $scope.cpp = function(){
+      $scope.favLanguage = "C++"
+    };
+    $scope.java = function(){
+      $scope.favLanguage = "Java"
+    };
+    $scope.javas = function(){
+      $scope.favLanguage = "JavaScript"
+    };
+  });
+</script>

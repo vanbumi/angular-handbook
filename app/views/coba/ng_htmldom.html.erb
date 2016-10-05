@@ -1,0 +1,53 @@
+<h1>AngularJS HTML DOM</h1>
+
+AngularJS has directives for binding application data to the attributes of HTML DOM elements.
+
+<h3>The ng-disabled Directive</h3>
+
+The <b>ng-disabled</b> directive binds AngularJS application data to the disabled attribute of HTML elements.
+
+<h3>Example</h3>
+
+<div ng-app="" ng-init="buttonOff = true ">
+  <p>
+    <button ng-disabled="buttonOff">Click me</button>
+  </p>
+  <p>
+    <input type="checkbox" ng-model="buttonOff"> Enable button
+  </p>
+  <p>
+    {{ myOff }}
+  </p>
+
+
+<h3>This is the code</h3>
+<pre>
+  &lt;div ng-app="" ng-init="buttonOff = true "&gt;
+    &lt;p>
+      &lt;button ng-disabled="buttonOff"&gt;Click me&lt;/button&gt;
+    &lt;/p>
+    &lt;p>
+      &lt;input type="checkbox" ng-model="buttonOff"&gt; Enable button
+    &lt;/p&gt;
+    &lt;p&gt;
+      {{ myOff }}
+    &lt;/p&gt;
+  &lt;/div&gt;
+</pre>
+
+<h2>The ng-show Directive</h2>
+<p>
+  The <b>ng-show</b> directive shows or hides an HTML element.
+</p>
+
+<h3>Example</h3>
+
+  <p ng-show="true">
+    I am visible
+  </p>
+  <p ng-show="false">
+    I am not visible
+  </p>
+
+<br><br>
+</div>

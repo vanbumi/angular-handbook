@@ -1,0 +1,264 @@
+<h1>AngularJS Events</h1>
+
+<p>
+  AngularJS has its own HTML <b>events</b> directives.
+</p>
+<p>
+  You can add AngularJS event listeners to your HTML elements by using one or more of these directives:
+</p>
+
+<ul>
+	<li><code class="w3-codespan">ng-blur</code></li>
+	<li><code class="w3-codespan">ng-change</code></li>
+	<li><code class="w3-codespan">ng-click</code></li>
+	<li><code class="w3-codespan">ng-copy</code></li>
+	<li><code class="w3-codespan">ng-cut</code></li>
+	<li><code class="w3-codespan">ng-dblclick</code></li>
+	<li><code class="w3-codespan">ng-focus</code></li>
+	<li><code class="w3-codespan">ng-keydown</code></li>
+	<li><code class="w3-codespan">ng-keypress</code></li>
+	<li><code class="w3-codespan">ng-keyup</code></li>
+	<li><code class="w3-codespan">ng-mousedown</code></li>
+	<li><code class="w3-codespan">ng-mouseenter</code></li>
+	<li><code class="w3-codespan">ng-mouseleave</code></li>
+	<li><code class="w3-codespan">ng-mousemove</code></li>
+	<li><code class="w3-codespan">ng-mouseover</code></li>
+	<li><code class="w3-codespan">ng-mouseup</code></li>
+	<li><code class="w3-codespan">ng-paste</code></li>
+</ul>
+
+<p>
+  The event directives allows us to run AngularJS functions at certain user events.
+
+  An AngularJS event will not overwrite an HTML event, both events will be executed.
+</p>
+
+<h2>Mouse Events</h2>
+<p>
+    Mouse events occur when the cursor moves over an element, in this order:
+</p>
+
+<ol>
+	<li>ng-mouseenter</li>
+	<li>ng-mouseover</li>
+	<li>ng-mousemove</li>
+	<li>ng-mouseleave </li>
+</ol>
+
+<p>
+  Or when a mouse button is clicked on an element, in this order:
+</p>
+
+<ol>
+	<li>ng-mousedown</li>
+	<li>ng-mouseup</li>
+	<li>ng-click</li>
+</ol>
+
+<p>
+  You can add mouse events on any HTML element.
+</p>
+
+<div ng-app="myApp">
+  <div ng-controller="myCtrl">
+    <h2 ng-mousemove="count = count + 1">Mouse Over me!</h2>
+
+    <h3>{{ count }}</h3>
+  </div>
+
+  <h2>Button Click</h2>
+  <div ng-controller="klikCtrl">
+    <button ng-click="count =  count + 1">Click me!</button>
+    <p>
+      <h3>{{ count }}</h3>
+    </p>
+  </div>
+
+  <h3>The code</h3>
+
+  <pre>
+    &lt;div ng-app="myApp"&gt;
+      &lt;div ng-controller="myCtrl"&gt;
+        &lt;h2 ng-mousemove="count = count + 1">Mouse Over me!&lt;/h2&gt;
+
+        &lt;h3>{{ count }}&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function($scope){
+        $scope.count = 0;
+      })
+    &lt;/script&gt;
+  </pre>
+
+  <h2>Toggle, True/False</h2>
+
+  <p>
+    If you want to show a section of HTML code when a button is clicked, and hide when the button is clicked again, like a dropdown menu, make the button behave like a toggle switch:
+  </p>
+
+  <div ng-controller="menuCtrl">
+    <div ng-show="showMenu" style="background-color:#3bf7d1; padding: 5px;">
+      <h1>Today Menu</h1>
+      <div>Pizza</div>
+      <div>Pasta</div>
+      <div>Pesce</div>
+      <div>Penyetan</div>
+      <div>Fried Rice Jancok</div>
+    </div>
+    <button ng-click="myFunction()">Show Me the Menu</button>
+  </div>
+
+  <h3>The code is:</h3>
+
+  <pre>
+    &lt;div ng-controller="menuCtrl"&gt;
+      &lt;div ng-show="showMenu"&gt;
+        &lt;h1>Today Menu&lt;/h1&gt;
+        &lt;div>Pizza&lt;/div&gt;
+        &lt;div>Pasta&lt;/div&gt;
+        &lt;div>Pesce&lt;/div&gt;
+        &lt;div>Penyetan&lt;/div&gt;
+        &lt;div>Fried Rice Jancok&lt;/div&gt;
+      &lt;/div>
+      &lt;button ng-click="myFunction()"&gt;Show Me the Menu&lt;/button&gt;
+    &lt;/div&gt;
+  </pre>
+  <p>Script:</p>
+  <pre>
+    app.controller("menuCtrl", function($scope){
+      $scope.showMenu = false;
+      $scope.myFunction = function(){
+        $scope.showMenu = !$scope.showMenu;
+      }
+    });
+  </pre>
+
+  <h3>Note</h3>
+  <p>
+    <ul>
+      <li>The <b>showMe</b> variable starts out as the Boolean value <b>false</b>.</li>
+      <li>The <b>myFunction</b> function sets the <b>showMenu</b> variable to the <b>opposite</b> of what it is, by using the <b>! (not)</b> operator.</li>
+    </ul>
+  </p>
+
+  <h2>Handle Event in Angular JS</h2>
+
+  <div ng-controller="handleEventCtrl">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Technology</th>
+          <th>Like</th>
+          <th>Dislike</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="techno in tehnologies">
+          <td>{{ techno.name }}</td>
+          <td>{{ techno.likes }}</td>
+          <td>{{ techno.dislikes }}</td>
+          <td>
+            <input type="button" value="Like" ng-click="incrementLikes(techno)">
+            <input type="button" value="Dislike" ng-click="incrementDislikes(techno)">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The code is:</h3>
+
+  <pre>
+    &lt;div ng-controller="handleEventCtrl"&gt;
+      &lt;table class="table table-hover table-striped"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Technology&lt;/th&gt;
+            &lt;th&gt;Like&lt;/th&gt;
+            &lt;th&gt;Dislike&lt;/th&gt;
+            &lt;th&gt;Actions&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr ng-repeat="techno in tehnologies"&gt;
+            &lt;td&gt;{{ techno.name }}&lt;/td&gt;
+            &lt;td&gt;{{ techno.likes }}&lt;/td&gt;
+            &lt;td&gt;{{ techno.dislikes }}&lt;/td&gt;
+            &lt;td&gt;
+              &lt;input type="button" value="Like" ng-click="incrementLikes(techno)"&gt;
+              &lt;input type="button" value="Dislike" ng-click="incrementDislikes(techno)"&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  </pre>
+  Script JS:
+  <pre>
+    // handle event LIke and Dislike
+    app.controller("handleEventCtrl", function($scope){
+      $scope.tehnologies = [
+        { name: "C#", likes: 0, dislikes: 0},
+        { name: "ASP.NET", likes: 0, dislikes: 0},
+        { name: "Ruby", likes: 0, dislikes: 0},
+        { name: "Java", likes: 0, dislikes: 0}
+      ];
+      $scope.incrementLikes = function(techno){
+        techno.likes++;
+      }
+      $scope.incrementDislikes = function(techno){
+        techno.dislikes++;
+      }
+    });
+  </pre>
+
+
+<p>
+  <ul>
+    <!-- <li><a href="#">Handle Event in AngularJS</a></li> -->
+    <li><a href="/coba-ng/form">Next</a></li>
+  </ul>
+
+</p>
+
+<br><br>
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope){
+    $scope.count = 0;
+  })
+  app.controller("klikCtrl", function($scope){
+    $scope.count = 0;
+  });
+  app.controller("menuCtrl", function($scope){
+    $scope.showMenu = false;
+    $scope.myFunction = function(){
+      $scope.showMenu = !$scope.showMenu;
+    }
+  });
+  // handle event LIke and Dislike
+  app.controller("handleEventCtrl", function($scope){
+    $scope.tehnologies = [
+      { name: "C#", likes: 0, dislikes: 0},
+      { name: "ASP.NET", likes: 0, dislikes: 0},
+      { name: "Ruby", likes: 0, dislikes: 0},
+      { name: "Java", likes: 0, dislikes: 0}
+    ];
+    $scope.incrementLikes = function(techno){
+      techno.likes++;
+    }
+    $scope.incrementDislikes = function(techno){
+      techno.dislikes++;
+    }
+  });
+
+</script>
+
+
+<br><br>

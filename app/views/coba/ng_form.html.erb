@@ -1,0 +1,84 @@
+<h1>AngularJS Forms</h1>
+
+<p>
+  Forms in AngularJS provides <b>data-binding and validation of input controls</b>.
+</p>
+
+<h2>Input Controls</h2>
+
+Input controls are the HTML input elements:
+<ul>
+  <li><b>input</b> elements</li>
+  <li><b>select</b> elements</li>
+  <li><b>button</b> elements</li>
+  <li><b>textarea</b> elements</li>
+</ul>
+
+<h2>Data-Binding</h2>
+
+<p>
+  Input controls provides data-binding by using the <b>ng-model</b> directive.
+</p>
+
+<pre>
+  &lt;input type="text" ng-model="firstname"&gt;
+</pre>
+
+<h3>Example</h3>
+
+<div ng-app="myApp">
+  <div ng-controller="formCtrl">
+    <form>
+      First Name: <input type="text" ng-model="firstName">
+    </form>
+  </div>
+
+  <pre>
+    &lt;div ng-controller="formCtrl"&gt;
+      &lt;form&gt;
+        First Name: &lt;input type="text" ng-model="firstName"&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  </pre>
+  <pre>
+    var app = angular.module("myApp", []);
+    app.controller("formCtrl", function($scope){
+      $scope.firstName = "Widyo";
+    });
+  </pre>
+
+  <h2>Checkbox</h2>
+  <p>
+    A <b>checkbox</b> has the value <b>true</b> or <b>false</b>. Apply the <b>ng-model</b> directive to a checkbox, and use its value in your application.
+  </p>
+
+  <h3>Example</h3>
+  <p>
+      Show the header if the checkbox is checked:
+  </p>
+
+  <div ng-controller="checkCtrl">
+    <h2>This is the Header</h2>
+    <h3><a href="https://jsfiddle.net/vanbumi/e8by2rL3/">Test Code</a></h3>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+</div>
+
+
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("formCtrl", function($scope){
+    $scope.firstName = "Widyo";
+  });
+</script>

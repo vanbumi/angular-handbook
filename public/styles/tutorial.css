@@ -14,12 +14,22 @@
 h1 {
   color: #0579b7;
 }
+
 b {
   color: red;
   /*font-weight: bold;*/
 }
 
-pre{
+label {
+  background-color: blue;
+  color: #fff;
+}
+
+/*p {
+  background:#b7d2f7;
+}*/
+
+/*pre{
     display: block;
     font-family: monospace;
     padding: 9.5px;
@@ -32,7 +42,9 @@ pre{
     background-color: #888;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
+}*/
+
+
 
 label{
   background-color: #3fc4ff;

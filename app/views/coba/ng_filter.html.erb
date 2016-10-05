@@ -31,9 +31,18 @@ The uppercase filter format strings to upper case:<br><br>
         {{ x.name +', '+ x.country }}
       </li>
   </ul>
+  <pre>
+    &lt;ul>&gt;
+        &lt;li ng-repeat="x in names | orderBy:'country' "&gt;
+          <code ng-non-bindable>{{ x.name +', '+ x.country }}</code>
+        &lt;/li&gt;
+    &lt;/ul&gt;
+  </pre>
 
   <h1 ng-controller="costCtrl">Price: {{ price | currency : 'Rp.' : 0 }}</h1>
-  <!-- {{ n3() | currency:"Rp.":0 }} -->
+  <pre>
+  &lt;h1 ng-controller="costCtrl"&gt;Price: <code ng-non-bindable>{{ price | currency : 'Rp.' : 0 }}</code>&lt;/h1&gt;  
+  </pre>
 
   <script charset="utf-8">
     var app = angular.module("myApp", []);

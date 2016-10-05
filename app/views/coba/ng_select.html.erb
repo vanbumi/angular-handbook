@@ -1,0 +1,106 @@
+<h1>AngularJS Select Boxes</h1>
+
+AngularJS lets you create <b>dropdown lists</b> based on items in an array, or an object.
+
+<h3>Creating a Select Box Using <b>ng-options</b></h3>
+If you want to create a dropdown list, based on an object or an array in AngularJS, you should use the <b>ng-options</b> directive:
+
+<pre>
+  &lt;select ng-options="x for x in names" ng-model="selectedName">&lt;/select&gt;
+</pre>
+
+<h3>Example:</h3>
+
+<div ng-app="myApp">
+  <div ng-controller="myCtrl">
+    <select ng-options="x for x in names" ng-model="selectedName"></select>
+  </div>
+
+  <script>
+    app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope){
+      $scope.names = ['Brandon', 'Ersya', 'Dyo', 'Norma'];
+    })
+
+    app.controller("selekCtrl", function($scope){
+      $scope.names = ['Brandon', 'Ersya', 'Dyo', 'Norma', 'Aaron'];
+    });
+
+    app.controller("carCtrl", function($scope){
+      $scope.cars = [
+        {model : "Ford Mustang", color : "red"},
+        {model : "Fiat 500", color : "white"},
+        {model : "Volvo XC90", color : "black"}
+      ];
+    });
+
+    app.controller("mobilCtrl", function($scope){
+      $scope.cars = {
+        car01 : {brand : "Ford", model : "Mustang", color : "red"},
+        car02 : {brand : "Fiat", model : "500", color : "white"},
+        car03 : {brand : "Volvo", model : "XC90", color : "black"}
+      }
+    });
+  </script>
+
+  <h3>ng-options vs ng-repeat</h3>
+
+  You can also use the <b>ng-repeat</b> directive to make the same dropdown list:
+
+  <h3>Example</h3>
+
+  <pre>
+    &lt;select&gt;
+      &lt;option ng-repeat="x in names">{{x}}&lt;/option&gt;
+    &lt;/select&gt;
+  </pre>
+
+  <div ng-controller="selekCtrl">
+    <select>
+      <option ng-repeat="x in names">{{x}}</option>
+    </select>
+  </div>
+
+  <h3>Example with <b>ng-options</b></h3>
+
+  <pre>
+    &lt;select ng-options="x.model for x in cars" ng-model="selectedCar"&gt;&lt;/select&gt;
+    &lt;h2&gt;You have selected: &lt;label>{{ selectedCar.model }}&lt;/label>&lt;/h2&gt;
+    &lt;h3&gt;Color: &lt;label&gt;{{ selectedCar.color }}&lt;/label>&lt;/h3&gt;
+
+    app.controller("carCtrl", function($scope){
+      $scope.cars = [
+        {model : "Ford Mustang", color : "red"},
+        {model : "Fiat 500", color : "white"},
+        {model : "Volvo XC90", color : "black"}
+      ];
+    });
+  </pre>
+
+  <div ng-controller="carCtrl">
+    <select ng-options="x.model for x in cars" ng-model="selectedCar"></select>
+
+    <h2>You have selected: <label>{{ selectedCar.model }}</label></h2>
+    <h3>Color: <label>{{ selectedCar.color }}</label></h3>
+  </div>
+
+  <h3>Next Example</h3>
+  <p>
+    The options in the dropdown list does not have to be the <b>key in a key-value pair</b>, it can also be the value, or a property of the value object:
+  </p>
+
+  <div ng-controller="mobilCtrl">
+    <select ng-options="y.brand for y in cars" ng-model="selectedCar"></select>
+
+    <h2>You have selected: {{ selectedCar.model }}</h2>
+    <h3>Color: {{ selectedCar.color }}</h3>
+
+  </div>
+
+
+<br><br>
+</div>
+
+<p>
+  <a href="/coba-ng/htmldom">Next</a>
+</p>

@@ -65,10 +65,34 @@ class CobaController < ApplicationController
   def ng_json
   end
 
+  def ng_table
+  end
+
+  def ng_table2
+  end
+
+  def select
+  end
+
+  def htmldom
+  end
+
+  def event
+  end
+
+  def form
+  end
+
   def example1
   end
 
   def example2
+  end
+
+  def example3
+  end
+
+  def example4
   end
 
 

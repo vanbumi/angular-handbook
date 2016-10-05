@@ -1,22 +1,51 @@
+<h1>JSON</h1>
+
+<p>
+  The data you get from the response is <b>expected to be in JSON format</b>.
+  JSON is a great way of <b>transporting data</b>, and it is easy to use within AngularJS, or any other JavaScript.<br><br>
+  Example: On the server we have a file that returns a JSON object containing 15 customers, all wrapped in array called records.
+</p>
+
+<p style="background-color:#b7d2f7; padding:5px;">
+  <%= render "partial-tutorial/json" %>
+</p>
+
 <div ng-app="myApp" ng-controller="customersCtrl">
 
   <h2>Customers List</h2>
-  <!-- <ul>
-    <li ng-repeat="x in myData">
-      {{ x.Name + ', ' + x.Country }}
-    </li>
-  </ul>
 
-  </div>
+<pre>
+&lt;table class="table table-hover table-striped"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;
+      Name
+    &lt;/th&gt;
+    &lt;th&gt;
+      Coutry
+    &lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr ng-repeat="x in names"&gt;
+    &lt;td&gt;
+      &#123;&#123;x.Name&#125;&#125;
+    &lt;/td&gt;
 
-  <script>
-  var app = angular.module('myApp', []);
-  app.controller('customersCtrl', function($scope, $http) {
-    $http.get("/customers.json").then(function (response) {
-        $scope.myData = response.data.records;
-    });
+    &lt;td&gt;
+      &#123;&#123;x.Country&#125;&#125;
+    &lt;/td&gt;
+
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<pre>
+var app = angular.module("myApp", []);
+app.controller("customersCtrl", function($scope, $http) {
+  $http.get("/customers.json").then(function(response) {
+    $scope.names = response.data.records;
   });
-  </script> -->
+});
+</pre>
+
+<br>
 
   <table class="table table-hover table-striped">
     <tr>
@@ -47,24 +76,3 @@
   </script>
 
 </div>
-
-<!-- <div ng-app="myApp" ng-controller="customersCtrl">
-
-<table>
-  <tr ng-repeat="x in names">
-    <td>{{ x.Name }}</td>
-    <td>{{ x.Country }}</td>
-  </tr>
-</table>
-
-</div>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-    $http.get("/customers.json")
-    .then(function (response) {
-      $scope.names = response.data.records;
-    });
-});
-</script> -->
