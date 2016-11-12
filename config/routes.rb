@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   get 'coba-ng/event' => 'coba#ng_event'
   get 'coba-ng/form' => 'coba#ng_form'
 
-
   get 'komentar' => 'coba#komentar'
 
   get 'home/index'
